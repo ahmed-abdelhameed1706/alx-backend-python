@@ -63,8 +63,7 @@ class TestGithubOrgClient(unittest.TestCase):
     )
     def test_has_license(self, input, key, expected):
         """method to test has license"""
-        result = GithubOrgClient.has_license(input, key)
-        self.assertEqual(result, expected)
+        self.assertEqual(GithubOrgClient.has_license(input, key), expected)
 
 
 if __name__ == "__main__":
