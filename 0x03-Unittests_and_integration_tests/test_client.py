@@ -45,7 +45,10 @@ class TestGithubOrgClient(unittest.TestCase):
     def test_public_repos(self, mock_get_json):
         """method to test public repos"""
         with patch.object(
-            GithubOrgClient, "_public_repos_url", new_callable=PropertyMock
+            GithubOrgClient,
+            "_public_repos_url",
+            return_value="https://api.github.com/orgs/test",
+            new_callable=PropertyMock,
         ) as mock_repos_url:  # no pep8
             gh_client = GithubOrgClient("test")
             repos = gh_client.public_repos()
