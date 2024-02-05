@@ -18,7 +18,9 @@ class TestGithubOrgClient(unittest.TestCase):
         org_client = GithubOrgClient(org_name)
         response = org_client.org
 
-        mock_get_json.assert_called_once_with(f"https://api.github.com/orgs/{org_name}")
+        mock_get_json.assert_called_once_with(
+            f"https://api.github.com/orgs/{org_name}"
+        )  # no pep8
 
         self.assertEqual(response, {"name": org_name})
 
